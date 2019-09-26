@@ -9,32 +9,51 @@ public class Calculator {
 
         JFrame frame = new JFrame("Calculator");
         frame.setSize(190,150);
+
+        GridLayout mainGrid = new GridLayout(2, 1);
+        frame.setLayout(mainGrid);
+
+        JPanel topPanel = new JPanel();
+        frame.add(topPanel);
+
+        JPanel southPanel = new JPanel();
+        frame.add(southPanel);
+
+        GridLayout southGrid = new GridLayout(1, 2);
+        southPanel.setLayout(southGrid);
+
         JTextArea textArea = new JTextArea("0");
-        frame.getContentPane().add(textArea, BorderLayout.NORTH);
-        JPanel panel1 = new JPanel();
-        JPanel panel2 = new JPanel();
-        frame.getContentPane().add(panel1, BorderLayout.WEST);
-        frame.getContentPane().add(panel2, BorderLayout.EAST);
-        GridLayout grid1 = new GridLayout(4, 3);
-        GridLayout grid2 = new GridLayout(4, 1);
-        panel1.setLayout(grid1);
-        panel2.setLayout(grid2);
-        panel1.add(new JButton("1"));
-        panel1.add(new JButton("2"));
-        panel1.add(new JButton("3"));
-        panel1.add(new JButton("4"));
-        panel1.add(new JButton("5"));
-        panel1.add(new JButton("6"));
-        panel1.add(new JButton("7"));
-        panel1.add(new JButton("8"));
-        panel1.add(new JButton("9"));
-        panel1.add(new JButton("C"));
-        panel1.add(new JButton("0"));
-        panel1.add(new JButton("="));
-        panel2.add(new JButton("+"));
-        panel2.add(new JButton("-"));
-        panel2.add(new JButton("*"));
-        panel2.add(new JButton("/"));
+        topPanel.add(textArea);
+
+        JPanel leftPanel = new JPanel();
+        southPanel.add(leftPanel);
+
+        JPanel rightPanel = new JPanel();
+        southPanel.add(rightPanel);
+
+        GridLayout leftGrid = new GridLayout(4, 3);
+        leftPanel.setLayout(leftGrid);
+
+        GridLayout rightGrid = new GridLayout(4, 1);
+        rightPanel.setLayout(rightGrid);
+
+        leftPanel.add(new JButton("1"));
+        leftPanel.add(new JButton("2"));
+        leftPanel.add(new JButton("3"));
+        leftPanel.add(new JButton("4"));
+        leftPanel.add(new JButton("5"));
+        leftPanel.add(new JButton("6"));
+        leftPanel.add(new JButton("7"));
+        leftPanel.add(new JButton("8"));
+        leftPanel.add(new JButton("9"));
+        leftPanel.add(new JButton("C"));
+        leftPanel.add(new JButton("0"));
+        leftPanel.add(new JButton("="));
+
+        rightPanel.add(new JButton("+"));
+        rightPanel.add(new JButton("-"));
+        rightPanel.add(new JButton("*"));
+        rightPanel.add(new JButton("/"));
         frame.show();
     }
 }
